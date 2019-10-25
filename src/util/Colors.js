@@ -1,0 +1,20 @@
+export default {
+    thkyellow: '#CCCC00',
+    thkblue: '#634DFF',
+    bg_color: '#FFFFFF',
+    thkpurple: '#800080',
+    thkfont_3: '#333333',
+    thkgray_F2: '#F2F2F2',
+    thkgray_AA: '#AAA1A1',
+    thklightblue: '#169BD5',
+    thkred: '#d81e06',
+    thkblue_light: '#00CCFF',
+    thkgreen: '#43AE5A',
+    thktint: '#65CAFF',
+    thk_ligntgray: '#8C96B9',
+    thk_gray: '#515D8A',
+    thk_bgcolor: '#F3F4F9',
+    thk_lightgreen: '#32C283',
+    thkfont_6: '#666666',
+    thkfont_c: '#CCCCCC'
+};

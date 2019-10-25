@@ -1,0 +1,104 @@
+@import '~antd/dist/antd.css';
+
+.wraps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    margin: 0 auto
+}
+.butRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+    margin-top: 50px;
+}
+.butRows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 600px;
+    margin-top: 10px;
+}
+.contents {
+    margin-top: 20px;
+    color: #333333
+}
+.singContent{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 600px;
+}
+.singContent p {
+    width: 600px;
+    text-align: left;
+    display: flex;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.contentRow {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-top: 20px;
+}
+.contentRows {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+}
+.contentKeys {
+    margin: 0;
+    width: 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+}
+.contentKey {
+    width: 60px;
+    height: 100%;
+    text-align: left;
+    vertical-align: top
+}
+.conts{
+    width: 540px;
+    text-align: left;
+    vertical-align: top
+}
+.bottoms{
+    width: 600px;
+    margin-top: 20px;
+    color: #333333;
+    text-align: left;
+}
+.bottoms p {
+    margin: 0;
+}
+.bottomTwo{
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.select {
+    margin: 0;
+    display: flex;
+    margin-top: 20px;
+    width: 100px;
+    background-color: blue;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    height: 30px;
+    color: #FFFFFF
+}

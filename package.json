@@ -2,16 +2,24 @@
   "name": "windows_wallet",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
+    "antd": "^3.24.2",
+    "bignumber.js": "^9.0.0",
+    "electron": "^6.0.10",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "3.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-start": "electron .",
+    "package": "electron-packager ./ windows_wallet --platform=darwin --arch=x64 --out --overwrite --electron-version 6.0.10",
+    "package_win": "electron-packager ./ windows_wallet --platform=all --arch=x64 --out --overwrite --electron-version 6.0.10"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +35,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron-packager": "^14.0.6"
   }
 }
