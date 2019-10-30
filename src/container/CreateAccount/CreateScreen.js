@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import { Button, message,Input,Icon } from 'antd';
+import { Button, message,Input } from 'antd';
 import UColor from '../../util/Colors'
 import './CreateScreen.css';
 import {getMenWords,getAccount,getPrivateKey,getAccountId,signBytes,verifyBytes }from '../../util/getrandom'
 const BigNumber = require('bignumber.js');
 
-const MyIcon = Icon.createFromIconfontCN({
-    scriptUrl: '//at.alicdn.com/t/font_1473195_xbw8389szhf.js', // 在 iconfont.cn 上生成
-});
 class CreateScreen extends Component {
     constructor(props) {
         super(props);
@@ -149,8 +146,15 @@ class CreateScreen extends Component {
                     <p className='conts'>{this.state.accountId}</p>
                 </div>
 
-                <p>
-                <MyIcon type='iconjinggao'/>请保存好您的挖矿账号。</p>
+                <p style={{
+                    display: 'flex',
+                    alignItems:'center',
+                    justifyContent:'center',
+                }}>
+                <img src={require('../../image/iconjinggao.png')} 
+                    style={{width: '16px', height: '16px',marginRight: '6px'}}
+                />
+                请保存好您的挖矿账号。</p>
 
                 <Button 
                     size='large'
@@ -178,11 +182,16 @@ class CreateScreen extends Component {
                         }
                     }}
                     style={{width: '160px',
+                        display: 'flex',
+                        alignItems:'center',
+                        justifyContent:'center',
                         backgroundColor: this.state.selectButton === 1 ? UColor.thkblue : UColor.bg_color,
                         color: this.state.selectButton === 1 ? UColor.bg_color : UColor.thkfont_3
                     }}
                 >
-                <MyIcon type={this.state.selectButton === 1 ? 'iconwakuang-bai' : 'iconwakuang-hui'}/>    
+                <img src={this.state.selectButton === 1 ? require('../../image/iconwakuang_bai.png') : require('../../image/iconwakuang_hui.png')} 
+                    style={{width: '16px', height: '16px',marginRight: '6px'}}
+                />
                 生成账户</Button>
                 <Button 
                     size='large'
@@ -197,7 +206,9 @@ class CreateScreen extends Component {
                         color: this.state.selectButton === 2 ? UColor.bg_color : UColor.thkfont_3
                     }}
                 >
-                <MyIcon type={this.state.selectButton === 2 ? 'iconbangding-bai' : 'iconbangding-hui'}/>    
+                <img src={this.state.selectButton === 2 ? require('../../image/iconbangding_bai.png') : require('../../image/iconbangding_hui.png')} 
+                    style={{width: '16px', height: '16px',marginRight: '6px'}}
+                />
                 绑定地址</Button>
             </div>
         )
