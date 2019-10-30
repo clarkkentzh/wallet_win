@@ -28,7 +28,8 @@ class CreateScreen extends Component {
     createAccount() {
         let text = getMenWords();
         let accounts = getAccountId(text)
-
+        // let pri = getPrivateKey(text)
+        // let pub = getAccount(text)
         this.setState({
             value: text,
             accountId: accounts,
