@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import { CSVLink } from "react-csv";
 import { Button, message,Input } from 'antd';
 import UColor from '../../util/Colors'
 import './CreateScreen.css';
 import {getMenWords,getAccount,getPrivateKey,getAccountId,signBytes,verifyBytes }from '../../util/getrandom'
 const BigNumber = require('bignumber.js');
-
 class CreateScreen extends Component {
     constructor(props) {
         super(props);
@@ -16,11 +16,30 @@ class CreateScreen extends Component {
             inputAddress: '',   //绑定地址
             inputMenword: '',
             signData:'',    //签名数据
-            selectButton: 0
+            selectButton: 0,
+            headers:[
+                {label: '助记词', key: 'men'},
+                {label: 'accountID', key: 'ids'},
+            ]
         };
         this.signValues = this.signValues.bind(this);
         this.veriSign = this.veriSign.bind(this);
     }
+
+    // componentDidMount(){
+    //     let list = [];
+    //     for(let i = 0; i < 50000; i++){
+    //         let text = getMenWords();
+    //         let accounts = getAccountId(text);
+    //         list.push({
+    //             men: text,
+    //             ids: accounts+'\t'
+    //         })
+    //     }
+    //     this.setState({
+    //         data: list
+    //     })
+    // }
 
     createAccount() {
         let text = getMenWords();
@@ -193,6 +212,11 @@ class CreateScreen extends Component {
                     style={{width: '16px', height: '16px',marginRight: '6px'}}
                 />
                 生成账户</Button>
+                {this.state.data ?
+                <CSVLink data={this.state.data} headers={this.state.headers}>
+                Download me
+              </CSVLink>:null
+              }
                 <Button 
                     size='large'
                     onClick={()=>{
