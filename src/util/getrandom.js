@@ -42,7 +42,7 @@ export function getMenWords(){
 
 
 
-export function getAccount(secretPhrase){
+export function getPublickeys(secretPhrase){
     if(secretPhrase){
         return getPublicKey(converters.stringToHexString(secretPhrase));
     }

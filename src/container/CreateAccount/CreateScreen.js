@@ -3,7 +3,7 @@ import { CSVLink } from "react-csv";
 import { Button, message,Input } from 'antd';
 import UColor from '../../util/Colors'
 import './CreateScreen.css';
-import {getMenWords,getAccount,getPrivateKey,getAccountId,signBytes,verifyBytes }from '../../util/getrandom'
+import {getMenWords,getPublickeys,getPrivateKey,getAccountId,signBytes,verifyBytes }from '../../util/getrandom'
 const BigNumber = require('bignumber.js');
 class CreateScreen extends Component {
     constructor(props) {
@@ -45,7 +45,7 @@ class CreateScreen extends Component {
         let text = getMenWords();
         let accounts = getAccountId(text)
         // let pri = getPrivateKey(text)
-        // let pub = getAccount(text)
+        // let pub = getPublickeys(text)
         this.setState({
             value: text,
             accountId: accounts,
@@ -55,7 +55,8 @@ class CreateScreen extends Component {
             inputMenword: ''
         })
     }
-    signValues(){
+
+    signValues(){  //签名
         if(!this.state.inputAddress){
             message.warning('请输入绑定地址', 2)
             return;
@@ -73,12 +74,12 @@ class CreateScreen extends Component {
         })
     }
 
-    veriSign(){
+    veriSign(){   //验证签名
         let address = this.state.inputAddress.substring(0,2) === '0x' ? this.state.inputAddress.substring(2) : this.state.inputAddress;
         let accounts = getAccountId(this.state.inputMenword)
 
         let strs = new BigNumber(accounts,10).toString(16) + address;
-        let publics = getAccount(this.state.inputMenword);
+        let publics = getPublickeys(this.state.inputMenword);
         
         alert(verifyBytes(this.state.signData,strs, publics))
     } 
